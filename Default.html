@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Adele S game</title>
+<!-- <script src="jquery-2.1.4.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script src="jquery-ui-1.11.4.js"></script> -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+<script>
+
+var i=0;
+var maxPics = 3;
+
+$(function() {
+
+$("#picture1").hide();	
+
+$(document).keydown(function(){       
+    changeSource();  
+    showP();    
+    }
+	);
+
+$(document).click(function(){       	
+    hideP();      
+    }
+	);
+
+}); //on load function
+
+
+    function showP() {    	 
+    	 $("#picture1").delay(100).show(2000);    	     	 
+        }            
+    
+    function hideP() {    	 
+    	 $("#picture1").delay(100).hide(2000);    	         
+    	 //bindEvent();    	
+        }    
+
+    function changeSource () {    	 
+    	 $("#picture1").hide(); 
+    	 i=i+1;
+    	 if(i>maxPics) i=1;    	 
+    	 $("#picture1 > .img").attr({ src: i+'.png'});
+    }
+
+
+</script>
+</head>
+<body>
+
+        <div id="picture1" class = "option1">                		
+		<img class="img" src="1.png">		
+
+
+</body>
+</html>
